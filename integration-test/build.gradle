@@ -1,3 +1,8 @@
+ext {
+    springCloudVersion = "Finchley.SR2"
+    springCloudServicesClientLibrariesVersion = "2.0.9-build.5"
+}
+
 dependencies {
     testCompile project(":components:test-support")
     testCompile "com.squareup.okhttp3:okhttp:$okhttpVersion"

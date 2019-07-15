@@ -11,6 +11,7 @@ include "components:backlog"
 include "components:projects"
 include "components:timesheets"
 include "components:users"
+include "platform-services:eureka-server"
 
 include "components:rest-support"
 include "components:test-support"
