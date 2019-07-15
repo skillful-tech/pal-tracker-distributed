@@ -3,7 +3,7 @@ applications:
   path: ./applications/timesheets-server/build/libs/timesheets-server.jar
   routes:
   - route: https://timesheets-pal-yassir.cfapps.io
-  memory: 270M
+  memory: 400M
   instances: 1
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }, memory_calculator: { stack_threads: 10 } }'
