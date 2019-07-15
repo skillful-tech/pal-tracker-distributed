@@ -3,7 +3,7 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: https://allocations-pal-yassir.cfapps.io
-  memory: 245M
+  memory: 270M
   instances: 1
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }, memory_calculator: { stack_threads: 10 } }'
