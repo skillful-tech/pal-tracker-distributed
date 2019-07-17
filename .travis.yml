@@ -115,21 +115,7 @@ jobs:
         - git tag -f $RELEASE_TAG
       deploy:
         <<: *github
-     - stage: deploy
-      language: bash
-      script:
-        - echo "Downloading uaa server $RELEASE_TAG"
-        - wget -P platform-services/outh-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/outh-server.jar
-      before_deploy:
-        - cp manifest.yml manifest.yml
-        - echo "Deploying auu server $RELEASE_TAG"
-      deploy: &cloudfoundry
-        provider: cloudfoundry
-        api: $CF_API_URL
-        username: $CF_USERNAME
-        password: $CF_PASSWORD
-        organization: $CF_ORG
-        space: $CF_SPACE
+
     - stage: deploy
       language: bash
       script:
@@ -163,6 +149,16 @@ jobs:
       before_deploy:
         - cp manifest-registration.yml manifest.yml
         - echo "Deploying registration server $RELEASE_TAG"
+      deploy:
+        <<: *cloudfoundry
+    - stage: deploy
+      language: bash
+      script:
+        - echo "Downloading uaa server $RELEASE_TAG"
+        - wget -P platform-services/outh-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/outh-server.jar
+      before_deploy:
+        - cp manifest.yml manifest.yml
+        - echo "Deploying auu server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
     - stage: deploy
