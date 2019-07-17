@@ -1,8 +1,8 @@
 applications:
 - name: oauth-server 
-  path: ./applications/allocations-server/build/libs/oauth-server.jar
+  path: build/libs/oauth-server.jar
   routes:
-    - route: uaa-yassir.cfapps.io
+    - route: https://uaa-yassir.cfapps.io
   memory: 384M
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }, memory_calculator: { stack_threads: 10} }'
