@@ -68,7 +68,7 @@ jobs:
         - ./gradlew testMigrate
       script:
         - APPLICATION=uaa
-        - ./gradlew clean :platform-services:outh-server:build
+        - ./gradlew clean :platform-services:oauth-server:build
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
@@ -155,7 +155,7 @@ jobs:
       language: bash
       script:
         - echo "Downloading uaa server $RELEASE_TAG"
-        - wget -P platform-services/outh-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/outh-server.jar
+        - wget -P platform-services/oauth-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/oauth-server.jar
       before_deploy:
         - cp manifest.yml manifest.yml
         - echo "Deploying auu server $RELEASE_TAG"
