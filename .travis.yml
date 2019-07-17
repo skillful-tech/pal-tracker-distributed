@@ -74,7 +74,11 @@ jobs:
         - git config --local user.email "travis@example.com"
         - git tag -f $RELEASE_TAG
       deploy:
-        <<: *github
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        file:
+          - "platform-services/oauth-server/build/libs/oauth-server.jar"
+        skip_cleanup: true
 
     - stage: build and publish
       language: java
