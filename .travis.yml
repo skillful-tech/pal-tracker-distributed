@@ -161,6 +161,7 @@ jobs:
         - echo "Downloading uaa server $RELEASE_TAG"
         - wget -P platform-services/oauth-server/build/libs https://github.com/$GITHUB_USERNAME/pal-tracker-distributed/releases/download/$RELEASE_TAG/oauth-server.jar
       before_deploy:
+        - cp manifest.yml
         - echo "Deploying auu server $RELEASE_TAG"
       deploy:
         <<: *cloudfoundry
